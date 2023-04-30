@@ -1,6 +1,6 @@
 # ESlint Plugin to enforce No Raw Text
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/4307f36f52877ccb301c/maintainability)](https://codeclimate.com/github/samitha9125/eslint-plugin-no-raw-text/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4307f36f52877ccb301c/test_coverage)](https://codeclimate.com/github/samitha9125/eslint-plugin-no-raw-text/test_coverage) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/4307f36f52877ccb301c/maintainability)](https://codeclimate.com/github/samitha9125/eslint-plugin-no-raw-text/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4307f36f52877ccb301c/test_coverage)](https://codeclimate.com/github/samitha9125/eslint-plugin-no-raw-text/test_coverage) [![codecov](https://codecov.io/gh/samitha9125/eslint-plugin-no-raw-text/branch/main/graph/badge.svg?token=USMU2NB7C4)](https://codecov.io/gh/samitha9125/eslint-plugin-no-raw-text) ![main](https://github.com/samitha9125/eslint-plugin-no-raw-text/actions/workflows/main.yml/badge.svg)
 
 ## Introduction
 
