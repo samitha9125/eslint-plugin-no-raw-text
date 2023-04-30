@@ -1,19 +1,31 @@
-# eslint-plugin-no-raw-text
+# ESlint Plugin to enforce No Raw Text
 
-The ESLint plugin &#34;no-raw-text&#34; enforces a rule that restricts the usage of raw text directly in JSX components, ensuring that text content is only rendered within specified components, such as &lt;p&gt;, &lt;span&gt;, or any other components passed as parameters to the plugin. This helps maintain a consistent structure and style in your React codebase by confining text rendering to specific, predefined components.
+## Introduction
+
+In modern mobile/web development, especially when supporting multiple languages with internationalization (i18n), it is crucial to ensure that all text content is managed in a consistent and maintainable manner. Raw text scattered throughout JSX components can lead to difficulties in managing translations and a less consistent structure in your codebase.
+
+The ESLint plugin "no-raw-text" is designed to address this issue by enforcing a rule that restricts the usage of raw text directly in JSX components. 
+
+But if you must, this also provides a way for the text content to only be rendered within specified components, such as`<p>`, `<span>`, `<Text>` or any other component.
+## Why this plugin?
+
+The popular plugin `eslint-plugin-react-native` used in react native includes a rule that enforces removing the raw text, but it still permits text content within the react native `<Text>` component.
+
+For developers who require additional control over which components are allowed to contain raw text, this plugin offers a valuable and flexible solution.
+
 
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
 
 ```sh
-npm i eslint --save-dev
+yarn add -D eslint
 ```
 
 Next, install `eslint-plugin-no-raw-text`:
 
 ```sh
-npm install eslint-plugin-no-raw-text --save-dev
+yarn add -D eslint-plugin-no-raw-text
 ```
 
 ## Usage
@@ -22,27 +34,28 @@ Add `no-raw-text` to the plugins section of your `.eslintrc` configuration file.
 
 ```json
 {
-    "plugins": [
-        "no-raw-text"
-    ]
+    "plugins": ["no-raw-text"]
 }
 ```
 
+Then configure the rules you want to use under the rules section. Once you enable this, it will errors for all the components that we have mentioned.
 
-Then configure the rules you want to use under the rules section.
+A sample can be found below.
 
-```json
-{
-    "rules": {
-        "no-raw-text/rule-name": 2
-    }
+```yaml
+'rules': {
+    'no-raw-text/no-raw-text':["error", ["Text", "p"]]
 }
 ```
 
-## Rules
+According to the above configuration, the plugin will throw an error if you use hardcoded text content inside any other component except `<Text> or <p>`.
 
-<!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
-<!-- end auto-generated rules list -->
+## Rule Configurations
 
+The rule accepts an array of strings as the second parameter. The strings can be any component names that you want to allow raw text content. If you want to allow raw text content only in the `<Text>` component, you can pass `["Text"]` as the second parameter.
 
+Also, you may omit the second parameter to show errors/warnings in all locations which use raw texts.
+
+## Contribution
+
+All PRs are welcome. Please raise an issue before raising a PR.
